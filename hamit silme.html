@@ -1,0 +1,88 @@
+<html>
+<style>
+.body{
+	background-color: #54555c ;
+}
+
+
+
+.div{
+	width:75px;
+	height:75px;
+	animation-name: donus;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	position:relative;
+	left: 1px;
+	top:1px;
+	border-style:solid;
+	font-size:20px;
+}
+@keyframes renk{
+	0%{background-color:red; left:1px; top:1px;}
+	25%{background-color:green; left:200px; top: 1px;}
+	50%{background-color:yellow; left:200px; top: 200px;}
+	75%{background-color:green; left:1px; top: 200px;}
+	100%{background-color:red; left:1px; top:1px;}
+}
+@keyframes renk1{
+	0%{background-color:red; left:1px; top;1px;}
+	50%{background-color:green; left:200px; top:200px;}
+	100%{background-color:red; left:1px; top;1px;}	
+}
+@keyframes donus{
+	0%{transform: rotate(0deg); background-color:red;}
+	50%{transform :rotate(360deg); background-color:green;}
+	100%{transform: rotate(0deg); background-color:red;}
+}
+.button{
+	width:100px;
+	height:50px;
+	position: absolute;
+	left: 500px;
+	top: 0px;
+	background-color:#8b8c99;
+}
+.input{
+	width:100px;
+	height:50px;
+	position: absolute;
+	left:500px;
+	top:50px;
+	transition:0.001s;
+	background-color:#8b8c99;
+}
+.inputbutton{
+	width:75px;
+	height:30px;
+	position: absolute;
+	left:600px;
+	top:60px;
+	transition:0.001s;
+	background-color:#8b8c99;
+}
+</style>
+<body class="body">
+<div class="div" id="divv">asd</div>
+<input type="text" id="inputt" class="input" value=""> </input>
+<button class="button" onclick="deneme()">deneme</button>
+<button class="inputbutton" onclick="inputtbox()">değiştir!</button>
+</body>
+<script>
+var animasyon = 0;
+var mousehover = 0;
+function deneme(){
+	if (animasyon==0){document.getElementById("divv").style.animationName = "renk1"; animasyon = 1;}
+	else if (animasyon==1){document.getElementById("divv").style.animationName = "renk"; animasyon = 2;}
+	else if (animasyon==2){document.getElementById("divv").style.animationName = "donus"; animasyon = 0;}
+	
+}
+function inputtbox(){
+	document.getElementById("divv").innerHTML = document.getElementById("inputt").value;}
+</script>
+
+
+
+
+
+</html>
